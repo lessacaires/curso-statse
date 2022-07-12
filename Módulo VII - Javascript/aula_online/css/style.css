@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600&family=Press+Start+2P&display=swap');
+
+
+
+*{
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    font-family: 'Clicker Script', cursive;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Press Start 2P', cursive;
+}
+.game{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(#87CEEB, #E0FFCE);
+}
+
+.score{
+    position: absolute;
+    font-size: 6vmin;
+    left: 1vmin;
+    top: 1vmin;
+    color: #fff;
+}
+
+.start{
+    position: absolute;
+    font-size: 3vmin;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+}
+
+.hide{
+    display: none;
+}
+
+.ground{
+    --left: 0;
+    position: absolute;
+    width:300%;
+    height: 40px;
+    bottom: 0;
+    left: calc(var(--left)* 1%);
+    
+}
+
+.clouds-game{
+    height: 30%;
+    position: absolute;
+    top: 100px;
+    animation: cloud-animation 20s infinite linear;
+}
+
+
+.pipe-game{
+    position: absolute;
+    left: calc(var(--left)*1%);
+    height: 30%;
+    bottom: 0;
+}
+
+.mario-game{
+    --bottom: 0;
+    position: absolute;
+    left: 1%;
+    height: 30%;
+    bottom: calc(var(--bottom)*1%);
+}
+
+.jump{
+    animation: jump-mario 500ms ease-out;
+}
+
+
+/*ANIMAÇÕES*/
+@keyframes cloud-animation{
+    from{
+        right: -520px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+    to{
+        right: 100%;
+    }
+}
+
+@keyframes jump-mario{
+    0%{
+        bottom: 0;
+    }
+    40%{
+        bottom: 180px;
+    }
+    60%{
+        bottom: 180px;
+    }
+    70%{
+        bottom: 180px;
+    }
+    100%{
+        bottom: 0
+    }
+}
